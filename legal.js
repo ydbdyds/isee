@@ -12,14 +12,14 @@
     });
   };
   var saved = null;
-  try { saved = localStorage.getItem("uptitle-lang"); } catch (e) {}
+  try { saved = localStorage.getItem("isee-lang"); } catch (e) {}
   show(saved === "zh" || saved === "en" ? saved : /^zh/i.test(navigator.language || "") ? "zh" : "en");
   document.addEventListener("DOMContentLoaded", function () {
     show(root.dataset.lang);
     document.querySelectorAll("[data-set-lang]").forEach(function (button) {
       button.addEventListener("click", function () {
         show(button.dataset.setLang);
-        try { localStorage.setItem("uptitle-lang", button.dataset.setLang); } catch (e) {}
+        try { localStorage.setItem("isee-lang", button.dataset.setLang); } catch (e) {}
       });
     });
   });
